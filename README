@@ -1,0 +1,61 @@
+Viper-7's Codepad - version 4.0-alpha - Deployable at last!
+
+This is still very much a work in progress, and is the result of a few hours of prep work, a single 14 hour marathon coding session, and my old core silverstripe codepad module, which hasn't been touched since I hacked it together in version 2 :/
+
+Still, this is by far the most powerful codepad engine I have ever built. The framework can easily handle any target language, not just PHP, and with total control over the php.ini settings, request & response content, execution environment and command line, on a per-user or per-paste basis, I can finally have the freedom to implement all the features we've all been wanting ;)
+
+And we still haven't gotten to the big part yet - It's deployable!
+
+A large chunk of my effort has gone in to 3 management objects, PHP_Downloader, PHP_Compiler and PHP_Jailer. With these you can setup the codepad on any VPS you have (you'll need root access for this), 
+
+PHP_Downloader will take a php version number like "5.3", "5.4-dev", "5.2.16", "trunk", etc; and provide you with a bzip2 archive for that release. Currently the archive support is missing, which will cause some slight internal changes (I might replace the current method of fetching the latest release with it.)
+
+PHP_Compiler will take a version number, a bzip2 archive and an array of configure options, then extract & compile that release, with complete & informative error detection along the way, and finally will deploy it as a usable engine outside the jail
+
+PHP_Jailer takes that usable PHP installation, and deploys it inside a chroot jail, creating whatever it needs along the way. It will add a new user, "jailexec", which is what all pastes will be executed as. This user should have no filesystem permissions inside the jail aside from /tmp, and will be automatically restricted to the codepad's chroot jail.
+
+
+From there, I have two Gearman workers: 
+
+One which runs as root outside the jail, "Manager", performing the grunt work of compiling & installing PHP, creating users, and updating database records while remaining strict & secure.
+
+And the other, "Worker", which runs inside the jail as the jailexec user, and executes pastes via a mock CGI interface, where security is no problem, and so where the entire request/response transaction, shell environment, php extensions, and even custom php.ini's are all fair game - and the simple JSON interface via Gearman can easily support all kinda of meta-data and dynamic settings, and can be opened up into a public API with a few lines of code.
+
+
+All of this comes together to mean you can order up your serving of php version, php extensions, php.ini, request/response processing (eg plain text vs html rendering, user-agent, etc), and have it automatically compiled (if required), and used to deliver your pasted code.
+
+
+Pastes now remember what version they were pasted with implicitly, and we're ready for user tracking / accounts :D
+
+
+For now - I think my brain needs a rest :P Will be back with more updates later - until then.. Enjoy :D
+
+
+
+
+Dependencies:
+
+A working webserver with PHP already up and running.
+PHP extensions: PDO_mysql, DOMDocument, Gearman
+Shell Utils: Gearman, Timelimit, Nice, Jailkit, ulimit (from bash), tar (bz2), 
+Front-end: SilverStripe CMS
+
+
+
+Todo:
+
+multiple preforked workers (queuing already works)
+double check if a version already exists in a compiled state in PHP_Compiler
+use archive version urls for older versions
+refactor $jail_log/$jailuser_log/$user_log/etc to an array to be returned by PHP_Jailer
+add shell error redirection in PHP_Jailer
+replace debug echos in manager/lib/PHP_* classes with gearman job status updates
+have manager automatically deploy a cut-down shared php install into the jail (/usr/local/php)
+refactor $params['input'] in worker to $input
+improve request/response data streaming code to support async requests as before (long polling)
+refactor the core SS module code - preferably removing the hack in ModelAsController
+rebuild ss module plugins from v3 to work with the new engine
+(re)add more extensions (vld, xdebug, xhprof, imagick, anything else people think of) - user profile and/or per paste control? >:D
+readd "make test" to PHP_Compiler
+improve security (currently lacking a form honeypot, and per-paste disk & network traffic monitoring)
+remap chroot's /tmp as noexec
