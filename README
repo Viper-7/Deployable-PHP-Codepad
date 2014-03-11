@@ -1,4 +1,4 @@
-Viper-7's Codepad - version 4.0-alpha - Deployable at last!
+Viper-7's Codepad - version 4.1-alpha
 
 This is still very much a work in progress, and is the result of a few hours of prep work, a single 14 hour marathon coding session, and my old core silverstripe codepad module, which hasn't been touched since I hacked it together in version 2 :/
 
@@ -38,24 +38,19 @@ Dependencies:
 A working webserver with PHP already up and running.
 PHP extensions: PDO_mysql, DOMDocument, Gearman
 Shell Utils: Gearman, Timelimit, Nice, Jailkit, ulimit (from bash), tar (bz2), 
-Front-end: SilverStripe CMS
+Front-end: SilverStripe CMS 2.4.7
 
 
 
 Todo:
 
-multiple preforked workers (queuing already works)
 double check if a version already exists in a compiled state in PHP_Compiler
-use archive version urls for older versions
 refactor $jail_log/$jailuser_log/$user_log/etc to an array to be returned by PHP_Jailer
-add shell error redirection in PHP_Jailer
 replace debug echos in manager/lib/PHP_* classes with gearman job status updates
 have manager automatically deploy a cut-down shared php install into the jail (/usr/local/php)
 refactor $params['input'] in worker to $input
-improve request/response data streaming code to support async requests as before (long polling)
 refactor the core SS module code - preferably removing the hack in ModelAsController
-rebuild ss module plugins from v3 to work with the new engine
-(re)add more extensions (vld, xdebug, xhprof, imagick, anything else people think of) - user profile and/or per paste control? >:D
+rebuild ss module plugins for v3 to work with the new engine
+(re)add more extensions (xdebug, xhprof, imagick, anything else people think of) - user profile and/or per paste control? >:D
 readd "make test" to PHP_Compiler
 improve security (currently lacking a form honeypot, and per-paste disk & network traffic monitoring)
-remap chroot's /tmp as noexec
