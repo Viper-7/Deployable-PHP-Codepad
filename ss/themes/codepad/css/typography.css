@@ -1,0 +1,64 @@
+.typography a {
+  color:#F09;
+  text-decoration: none;
+}
+
+a {
+  color:#FFF;
+  text-decoration: none;
+}
+
+.typography a#big,
+a#big {
+  text-align: right;
+  color: #F09;
+}
+
+a:hover,
+a.ro {
+  color: #F09;
+}
+
+.content h1 {
+  font: normal 1.4em sans-serif,Arial;
+  padding: 2px 6px;
+  background: #000;
+  color: #FFF;
+}
+
+.typography h2 {
+  font: normal 1em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 2px 6px;
+  background: #000;
+  color: #FFF;
+}
+
+.typography h3 {
+  font: bold 1.1em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 2px 6px;
+  color: #f09;
+}
+
+.typography h4 {
+  font: bold 1em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 2px 6px;
+  border-bottom:1px solid #f09;
+  color: #F09;
+}
+
+.typography h5 {
+  font: normal 0.85em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 3px 6px;
+  color: #FFF;
+}
+
+.typography h6 {
+  font: normal 0.7em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 3px 6px;
+  color: #FFF;
+}

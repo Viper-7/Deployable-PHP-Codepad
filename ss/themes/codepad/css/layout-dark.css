@@ -1,0 +1,438 @@
+/*
+  SilverStripe Street Style Theme
+  http://www.silverstripe.com
+  
+  adapted to SilverStripe by Wojtek Szkutnik
+  http://silverstripe.pl
+
+  design by Arcsin
+  http://www.arcsin.se
+*/
+
+html {
+    height:100%;
+    background: #111;
+}
+
+body {
+  min-height:100%;
+  background: #222 url(../images/bg.gif);
+  text-align: center;
+  font: normal 0.9em sans-serif,Arial;
+}
+
+body,.image,h1,p {
+  margin: 0; padding: 0;
+  color: #fff;
+}
+
+.header {
+/*  width: 720px; */
+  height: 85px;
+  background: #111 url(../images/bgright.png) no-repeat;
+  margin: 0; padding: 0;
+}
+
+.gfxHeader {
+  text-align:right;
+  padding-right: 10px;
+}
+
+.gfxHeader h1 {
+  color: #FFF;
+}
+  
+.gfxHeader h1,a#big {
+  font: normal 4em sans-serif,Arial;
+  display: block;
+/*  width:90%; 
+	background: #000; */
+	text-align: right;
+}
+
+.main {
+  background: #111;
+  margin: 0;
+  padding: 0;
+  border: 10px solid #222;
+  border-bottom: 0;
+  text-align: left;
+}
+
+.content {
+  background: #111;
+  border-top: 10px solid #222;
+  padding: 10px 5px;
+  color: #888;
+  padding-right: 220px;
+}
+input.script_title {
+	background-color: #222;
+	border: 0;
+	font: normal 1.4em sans-serif,Arial;
+	padding: 2px 6px;
+	margin: 6px 0;
+	color: #fff;
+}
+
+
+.pad_output {
+	width: 100%;
+}
+.pad_code {
+	width: 97%;
+	background: #fff;
+	margin: 0 auto;
+}
+div.paste_button {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	
+	background-color: #222;
+}
+.stats {
+	width: 240px;
+	background-color: #000;
+	border: 1px solid #B69410;
+	padding: 0 10px;
+	margin: 10px 10px;
+	float: left;
+	margin-left: 4.8%;
+	margin-bottom: 15px;
+	height: 66px;
+}
+span.vis_public {
+	color: #33CC33;
+}
+span.vis_private {
+	color: #cc3333;
+}
+
+.stats.left {
+}
+.stats.middle {
+}
+.stats.right {
+}
+
+.stats th {
+	color: #B69410;
+	font-weight: normal;
+}
+
+div input[type="submit"] {
+	border: 1px solid #403403;
+	color: #333;
+	background: #ddd;
+	padding: 0;
+	height: 25px;
+}
+
+div input[type="submit"].paste {
+	height: 28px;
+	width: 98%;
+	display: block;
+	margin: 0 auto;
+	vertical-align: middle;
+}
+div textarea, div iframe {
+	display: block;
+	width: 96%;
+	margin: 10px auto;
+	min-height: 150px;
+	padding: 6px;
+	/*border: 1px solid #B69410;*/
+	border: 1px solid #403403;
+	color: #333;
+	background: #ddd;
+	margin-bottom: 20px;
+}
+table.stats select {
+	border: 0;
+	width: 90%;
+	margin: 2px auto;
+}
+.content h1 {
+  font: normal 1.4em sans-serif,Arial;
+  padding: 2px 6px;
+  margin: 6px 0;
+  background: #000;
+  color: #FFF;
+}
+
+.content h2 {
+  font: normal 1em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 2px 6px;
+  background: #000;
+  color: #FFF;
+}
+
+.content h3 {
+  font: bold 1.1em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 2px 6px;
+  color: #f09;
+}
+.content h4 {
+  font: bold 1em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 2px 6px;
+  border-bottom:1px solid #f09;
+  color: #F09;
+}
+.content h5 {
+  font: normal 0.85em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 3px 6px;
+  color: #FFF;
+}
+.content h6 {
+  font: normal 0.7em sans-serif,Arial;
+  margin-top:2px !important;
+  padding: 3px 6px;
+  color: #FFF;
+}
+
+.content div.hidden {
+	display: none;
+}
+.content h1 span.errorcount.good {
+	color: #11EE11;
+}
+.content h1 span.errorcount.bad {
+	color: #EE1111;
+}
+.content h1 span {
+  color: #999;
+}
+.content h1 span.showhide, .content h1 span.showhide a {
+	color: #999;
+	text-decoration: none;
+	font-size: 8pt;
+}
+.content h1 span.showhide a:hover {
+	color: #CCC;
+	text-decoration: underline;
+}
+.content h1 span.showhide a:active {
+	color: #EEEE11;
+}
+
+.content p {
+  font: normal 0.8em Verdana,Arial; 
+  padding: 6px 6px 10px;
+}
+
+.content a {
+color: #EEEE11;
+text-decoration:none;
+}
+
+.content a:hover {
+text-decoration:underline;
+color: #ffcc20;
+}
+
+.footer {
+  height: 120px;
+  background: #222 url(../images/bgfooter.gif);
+  border-top: 10px solid #222;
+  text-align: center;
+  font: bold 0.7em Verdana,Arial;
+  color: #333;
+}
+
+.footer a {
+  color: #444;
+}
+
+div.navcontainer {
+	position: absolute;
+	top: 130px;
+	right: 15px;
+	width: 197px;
+}
+
+.nav.views {
+
+}
+.nav.user {
+
+}
+.nav .head {
+	margin: 0;
+	padding: 1px 5px;
+	background-color: #000;
+	border-bottom: 1px solid #866408;
+	color: #b69410;
+	width: 188px;
+}
+
+div.nav {
+	margin: 0
+}
+ul.subnav {
+	margin: 0;
+	background-color: #000;
+	padding: 10px;
+}
+ul.subnav li { 
+	margin: 0;
+	margin-bottom: 10px;
+}
+.nav .user_content {
+	padding: 10px;
+	margin: 0;
+	background: #000;
+}
+
+.nav .user_content span {
+	color: #999;
+}
+#codepadloader {
+	margin: 10px auto;
+	padding: 0 20px;
+	text-align: left;
+}
+
+.nav .user_content .active {
+	color: #EEEE11;
+	float: right;
+}
+.nav .user_content a {
+	float: right;
+}
+.nav .user_content a:hover {
+	background: transparent;
+}
+ul.nav{
+	background: #000;
+	list-style:none;
+	color: #fff;
+	text-align: left;
+	margin: 0;
+	float:right;
+	position:relative;
+	z-index:5;
+	padding: 0;
+}
+.nav li{
+	margin:10px;
+	display:block;
+}
+.nav {
+	color:#fff;
+}
+ul.nav a, ul.subnav a{
+	display:block;
+	padding:5px;
+	color:#fff;
+	background:#333;
+	text-decoration:none;
+	font-size: 10pt;
+	min-width: 127px;
+	border: 1px solid #333;
+}
+.nav a:hover{
+	color:#fff;
+	text-decoration:none;
+	background:#6b360c;
+}
+
+/*--- DROPDOWN ---*/
+ul.nav ul{
+	background:#000; /* Adding a background makes the dropdown work properly in IE7+. Make this as close to your page's background as possible (i.e. white page == white background). */
+	list-style:none;
+	position:absolute;
+	left:-9999px; /* Hide off-screen when not needed (this is more accessible than display:none;) */
+	width: 300px;
+	padding: 6px;
+	top: -50px;
+	border: 1px solid #b69410;
+}
+.nav ul li{
+	padding-top:1px; /* Introducing a padding between the li and the a give the illusion spaced items */
+	float:none;
+}
+.nav ul a{
+	white-space:nowrap; /* Stop text wrapping and creating multi-line dropdown items */
+}
+.nav li:hover ul{ /* Display the dropdown on hover */
+	left: -295px;
+}
+.nav li:hover a{ /* These create persistent hover states, meaning the top-most link stays 'hovered' even when your cursor has moved down the list. */
+	background:#333;
+	color: #ffcc20;
+	border: 1px solid #c6a420;
+}
+.nav li:hover ul a{ /* The persistent hover state does however create a global style for links even before they're hovered. Here we undo these effects. */
+	text-decoration:none;
+	background:#333;
+	color: #fff;
+	border: 1px solid #999;
+}
+.nav li:hover ul li a:hover{ /* Here we define the most explicit hover states--what happens when you hover each individual link. */
+	background:#333;
+	color: #ffcc20;
+	border: 1px solid #c6a420;
+}
+
+ul.nav li fieldset {
+	position: absolute;
+	right: 0;
+	float: right;
+}
+
+ul.nav li fieldset label {
+	margin-right: 100px;
+	line-height: 18px;
+}
+
+ul.nav li.selectfield {
+	height: 60px;
+}
+
+ul.nav li.optionfield {
+	height: 60px;
+}
+
+ul.nav li.inputfield {
+	height: 30px;
+}
+
+ul.nav li.active a {
+	background: #171;
+}
+ul.nav li.centre input {
+	display: block;
+	position: relative;
+	margin: 0 auto;
+}
+
+ul.nav li ul li a.inline {
+	display: inline;
+	background:#333;
+	color: #fff;
+	border: 1px solid #999;
+	line-height: 30px;
+	text-decoration: none;
+}
+ul.nav li:hover ul li a.inline:hover {
+	display: inline;
+	background: none transparent;
+	text-decoration: none;
+}
+
+ul.nav input {
+	position: absolute;
+	right: 10px;
+}
+ul.nav select {
+	position: absolute;
+	right: 10px;
+	height: 50px;
+	border: 1px solid #403403;
+	color: #333;
+	background: #ddd;
+}
