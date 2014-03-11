@@ -38,7 +38,7 @@ Dependencies:
 A working webserver with PHP already up and running.
 PHP extensions: PDO_mysql, DOMDocument, Gearman
 Shell Utils: Gearman, Timelimit, Nice, Jailkit, ulimit (from bash), tar (bz2), 
-Front-end: SilverStripe CMS 2.4.7
+Front-end: SilverStripe CMS 2.4.7 (should be fully compatible with 2.4.13)
 
 
 

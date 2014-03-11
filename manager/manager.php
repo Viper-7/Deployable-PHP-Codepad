@@ -89,7 +89,7 @@ function CompilePHP($version, $debug=true) {
 	
 	if($debug) echo "Updating Database for {$version}\n";
 
-	$db = new PDO('mysql:host=127.0.0.1;dbname=Codepad;charset=utf8', 'root', 'forgive7');
+	$db = new PDO('mysql:host=127.0.0.1;dbname=Codepad;charset=utf8', 'root', '');
 	$stmt = $db->prepare('UPDATE PHPVersion SET LastCompiled = NOW(), FuncName = ?, Path = ? WHERE FuncName = ?');
 	$stmt->execute(array($info['version'], $deploy_path, trim($version)));
 
