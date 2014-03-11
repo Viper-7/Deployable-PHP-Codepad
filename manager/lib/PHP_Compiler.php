@@ -6,18 +6,19 @@ class PHP_Compiler {
 		$basepath = "/tmp/php-{$version}";
 		$gz = "{$basepath}/{$version}.tar.bz2";
 
-		if(file_exists($basepath)) {
-			$this->Deltree($basepath);
-		}
+                /*if(file_exists($basepath)) {
+                        $this->Deltree($basepath);
+                }
 
-		mkdir($basepath);
+                mkdir($basepath);
+
 		if(rename($file, $gz)) {
 			if($this->debug) 
 				echo "Moved archive to {$gz}\n";
 		} else {
 			throw new Exception("Archive {$gz} not found!");
 		}
-
+*/
 		chdir($basepath);
 		$tar_log = shell_exec("tar -xvBf {$gz} -C {$basepath} 2>&1");
 		unlink($gz);

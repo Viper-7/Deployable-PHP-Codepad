@@ -1,9 +1,4 @@
 <?php
-/* Gearman function docs go here
-result: ERROR|OK
-type: SUCCESS|COMPILE|DOWNLOAD|JAIL
-*/
-
 if(!file_exists('lib/PHP_Compiler.php')) {
 	set_include_path(get_include_path() . PATH_SEPARATOR . dirname(__FILE__));
 }
@@ -28,7 +23,7 @@ if(isset($argv[1])) {
 	$worker = new GearmanWorker();
 	$worker->addServer();
 	$worker->addFunction('CompilePHP', 'CompilePHP');
-	while($worker->work());
+	while($worker->work()) { usleep(100000); }
 	
 }
 
@@ -94,7 +89,7 @@ function CompilePHP($version, $debug=true) {
 	
 	if($debug) echo "Updating Database for {$version}\n";
 
-	$db = new PDO('mysql:host=localhost;dbname=Codepad;charset=utf8', 'root', 'forgive7');
+	$db = new PDO('mysql:host=127.0.0.1;dbname=Codepad;charset=utf8', 'root', 'forgive7');
 	$stmt = $db->prepare('UPDATE PHPVersion SET LastCompiled = NOW(), FuncName = ?, Path = ? WHERE FuncName = ?');
 	$stmt->execute(array($info['version'], $deploy_path, trim($version)));
 

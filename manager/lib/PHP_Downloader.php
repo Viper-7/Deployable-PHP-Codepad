@@ -29,7 +29,7 @@ class PHP_Downloader {
 
 	protected function getLiveURL($version) {
 		$dom = new DOMDocument();
-		$dom->loadHTMLFile('http://www.php.net/downloads');
+		$dom->loadHTMLFile('http://nl3.php.net/downloads');
 		$xpath = new DOMXPath($dom);
 
 		foreach($xpath->query('//div[@id="content"]/ul/li/a/@href') as $href) {
@@ -41,7 +41,7 @@ class PHP_Downloader {
 
 			$url = str_replace('/from/a/', '/from/this/', $url);
 			
-			$urls[$ver] = "http://www.php.net{$url}";
+			$urls[$ver] = "http://nl3.php.net{$url}";
 		}
 
 		if(isset($urls[$version])) {
@@ -50,6 +50,7 @@ class PHP_Downloader {
 				'url' => $urls[$version]
 			);
 		}
+		if(!$urls) $urls = array();
 		
 		krsort($urls);
 
